@@ -1,0 +1,47 @@
+Alice has a popular chat server. She decides to create a website for it so that other people can register to use her chat server. Anyone who wants to join the chat server must create a unique username. Alice wants to design a system which should work on the following principle:
+
+Each time a new user wants to register, she/he sends her/his preferred ‘name’. If such name does not exists in the database, it will be accepted and added to the database and the user gets the response ‘OK’. On the other hand, if the ‘name’ already exists in the database, the system makes up a new username, sends it to the user and then adds it to the database without confirmation! The new username is formed by the following rule. Numbers, starting with , are appended one after another to ‘name’ (name1, name2, …), among these numbers, the least  is found so that ‘name’ does not yet exist in the database.
+
+Alice once again asks for your help to program this system.
+
+Input Format
+
+The first line contains a number . The following n lines contain the requests to the system. Each request is a non-empty line and consists of not more than  characters.
+
+Constraints
+
+
+Output Format
+
+Print n lines, which are the system responses to the users’ requests:
+
+‘OK’ if the request is successful
+new username, if the requested username already exists
+Sample Input 0
+
+5
+first
+first
+first
+second
+second
+Sample Output 0
+
+OK
+first1
+first2
+OK
+second1
+Sample Input 1
+
+4
+abacaba
+acaba
+abacaba
+acab
+Sample Output 1
+
+OK
+OK
+abacaba1
+OK
