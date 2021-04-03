@@ -1,0 +1,59 @@
+Alice’s mom, Olivia is a surgeon in ASU Health Center. To reach the operating room, she must pass through a waiting area, where some patients with Coronavirus symptoms are waiting to get tested! To avoid the infection, Olivia wants to pass through the area in such a way that she keeps the maximum distance from the patients. Your task is to help her find the maximum possible distance from any patient while passing through the waiting area. You are given the map of the area as a matrix, in which the locations of the patients and the free seats (where she cannot pass through!) are marked. The distance of two cells  and  in the matrix is defined as . Seats do not block corona from spreading. Thus, in the definition of the distance between two cells, we do not consider the places of the seats. In each step, Olivia can go from one cell in the matrix to one of its four neighbors: up, down, right, and left in the saloon, if no seats and patients are there.
+
+Input Format
+
+The first line of the input consists of two integers  and  separated by a space, which is the number of rows and the number of columns, respectively. Then, the map of the waiting area is given in  following lines; each line represents a row of the matrix and contains  characters, “*” is for a patient, “#” for an empty seat, and “.” for free space where Olivia can walk through. The starting point of Olivia is represented by an “S” character, and the endpoint of her path is represented by an “E” character in the matrix.
+
+Note that Olivia cannot go out of the waiting area (which is represented as the matrix) in her path.
+
+Constraints
+
+
+
+Output Format
+
+Considering the safest path as the path having the maximum distance from patients, print the maximum possible distance which Olivia can maintain from the patients in her path. If it is not possible for Olivia to reach the operating room at all, print “” in the output. Otherwise, if no patient is present in the waiting area, print “safe” in the output.
+
+Sample Input 0
+
+4 5
+.*#..
+.*..E
+..##.
+S....
+Sample Output 0
+
+2
+Explanation 0
+
+In the above table, the safest path is as below. The distances from patients are . Thus, the maximum distance that Olivia can maintain during the safest path is 2:
+
+.*#..
+.*..E
+..##^
+O>>>^
+Sample Input 1
+
+6 8
+.......E
+........
+........
+.....**.
+........
+S.......
+Sample Output 1
+
+3
+Explanation 1
+
+In the above table, the safest path is obvious. The distances from patients are . Thus, the maximum distance that Olivia can maintain during the safest path is 3.
+
+Sample Input 2
+
+3 3
+#E#
+###
+#S#
+Sample Output 2
+
+-1
