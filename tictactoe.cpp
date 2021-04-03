@@ -48,29 +48,39 @@ string nextMove(vector<vector<char>> arr) {
 }
 
 char checkWinner(vector<vector<char>> arr) {
+  int count = 0;
+  char winner;
   for(int i=0;i<3;i++) {
     if(arr[i][0] == arr[i][1] && arr[i][1] == arr[i][2]) {
       if(arr[i][0] != '.') {
-        return arr[i][0];
+        winner = arr[i][0];
+        count++;
       }
     }
     if(arr[0][i] == arr[1][i] && arr[1][i] == arr[2][i]) {
       if(arr[0][i] != '.') {
-        return arr[0][i];
+        winner = arr[0][i];
+        count++;
       }
     }
   }
   if(arr[0][0] == arr[1][1] && arr[1][1] == arr[2][2]) {
     if(arr[1][1] != '.') {
-      return arr[1][1];
+      winner = arr[1][1];
+      count++;
     }
   }
   if(arr[0][2] == arr[1][1] && arr[1][1] == arr[2][0]) {
     if(arr[1][1] != '.') {
-      return arr[1][1];
+      winner = arr[1][1];
+      count++;
     }
   }
-  return '.';
+  if(count<=1) {
+    return winner;
+  } else {
+    return '-';
+  }
 }
 
 bool isDraw(vector<vector<char>> arr) {
@@ -98,11 +108,17 @@ int main() {
   if(!isLegal(arr)) {
     cout << "illegal";
     return 0;
-  } if(checkWinner(arr)=='X') {
+  }
+  char c = checkWinner(arr);
+  if(c=='-') {
+    cout << "illegal";
+    return 0;
+  }
+  if(c=='X') {
     cout << "the first player won";
     return 0;
   }
-  if(checkWinner(arr)=='O') {
+  if(c=='O') {
     cout << "the second player won";
     return 0;
   }
