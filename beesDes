@@ -1,0 +1,29 @@
+Alice is studying bees’ behaviors. They make their homes like the following figure:
+
+image
+
+First, they make the home , then they make the other homes around it clockwise. Alice’s experiments show that bees travel between cells by taking the shortest distance. We consider two cells to be adjacent if and only if they share a side. A path of length  from cell  to cell  is a sequence of cells  such that  and  are adjacent for all . Alice needs your help to write a program which can calculate the shortest distance for  given cells.
+
+Input Format
+
+The test case consists of two space-separated integers  and .
+
+Constraints
+
+
+Output Format
+
+Print a single integer showing the minimum distance from cell  to cell .
+
+Sample Input 0
+
+8 4
+Sample Output 0
+
+2
+Sample Input 1
+
+11 12
+Sample Output 1
+
+5
