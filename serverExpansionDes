@@ -1,0 +1,46 @@
+Alice has a chat server and wants to expand it to cover more users. She hires Bob to work on the chat server. Alice only pays Bob based on the useful hours (not just his presence) which is provided by him. Bob records his working hours in a special format. The recording consists of several terms. Each term is a positive or negative time, e.g. -8:30 or +09:20. Bob found that he can express all he needs to record using such terms. For example:
+
+To show a 90-minute working chunk, he can add either of the terms +0:90 or +1:30
+If he started a work at 9:00 AM and finished it at 1:30 PM, he can write it with terms -9:00 and +13:30
+To show a 15-minute break during his job, he can just add a -0:15 term
+If he has paused his work at 13:15 and resumed it at 14:05, he can write the break with terms +13:15 and -14:05.
+Obviously, the order of the terms does not affect the result. As a programmer, Bob knows summing up the terms is a boring and error-prone task – something which could be done by computers. Your task is to write a program that does all these summations for Bob. But, entering the recorded terms in the above format was still annoying for Bob. So, he tweaked the format a little bit in order to speed up the data entry process:
+
+The hour and minute parts are non-negative, but there is no constraint on their maximum value. So, all the terms +25:30, +24:90, and +23:150 are valid and have the same meaning.
+Typing leading zeros are not necessary. So, +8:5 is the same as +08:05.
+Typing zero parts are not necessary. So, +8: = +8:0 and -:5 = -0:05.
+Typing the “:” character in each term halves the speed of data entry, because it is the only character which is not available in the number-pad (on the right side of the keyboard) and it also needs the shift key! Thus, from now on, the ‘.’ character has the same meaning as the ‘:’ character. So, the term +8.5 means +8:05, not +8:30!
+Input Format
+
+The first line is an integer  showing the number of entries. The next  lines are the times recorded by Bob.
+
+Constraints
+
+
+Output Format
+
+Output the total working time in H:MM format. It is guaranteed that the answer is positive.
+
+Sample Input 0
+
+6
+-11.45
+-:5
+-1:10
+-.30
+-.5
++21.55
+Sample Output 0
+
+8:20
+Sample Input 1
+
+5
+-8.
+-1.
+-:3
++12.
++.10
+Sample Output 1
+
+3:07
