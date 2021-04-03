@@ -62,13 +62,12 @@ int main() {
         }
 
         total += sign * (60 * hrs + mins);
-
     }
 
     hrs = total / 60;
     mins = total % 60;
 
-    char chr = "0";
+    char chr = '0';
 
     if (mins < 10) {
         cout << hrs << ":" << chr << mins;
