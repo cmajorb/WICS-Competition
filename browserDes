@@ -1,0 +1,33 @@
+Bob is working on a new browser called “BoBrowser”. He wants to add an autocomplete function to his browser. Autocomplete is a program function that enables inputting the text (in editors, command line shells, browsers etc.) completing the text by its inputted part. A list consisting of  last visited by the user pages and the inputted part  are known. You must find the lexicographically smallest address having a prefix .
+
+Input Format
+
+The first line contains the  line which is the inputted part. The second line contains an integer  which is the number of past visited pages. Then follow  lines which are the visited pages, one on each line. All the lines have lengths of from  to  symbols inclusively and consist of lowercase Latin letters only.
+
+Constraints
+
+
+Output Format
+
+If  is not the beginning of any of  addresses of the visited pages, print . Otherwise, print the lexicographically minimal address of one of the visited pages starting from . The lexicographical order is the order of words in a dictionary. The lexicographical comparison of lines is realized by the '' operator in the modern programming languages.
+
+Sample Input 0
+
+gma
+2
+google.com
+gmail.com
+Sample Output 0
+
+gmail.com
+Sample Input 1
+
+oog
+4
+google.com
+gmail.com
+find
+fand
+Sample Output 1
+
+oog
