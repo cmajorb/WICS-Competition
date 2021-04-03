@@ -24,6 +24,9 @@ bool isLegal(vector<vector<char>> arr) {
   if(abs(o-x)>1) {
     return false;
   }
+  if(x > 5 && o > 4) {
+    return false;
+  }
   return true;
 }
 
@@ -48,38 +51,55 @@ string nextMove(vector<vector<char>> arr) {
 }
 
 char checkWinner(vector<vector<char>> arr) {
-  int count = 0;
-  char winner;
+  int xwin = 0;
+  int owin = 0;
+  char winner = '.';
   for(int i=0;i<3;i++) {
     if(arr[i][0] == arr[i][1] && arr[i][1] == arr[i][2]) {
-      if(arr[i][0] != '.') {
+      if(arr[i][0] == 'X') {
         winner = arr[i][0];
-        count++;
+        xwin++;
+      }
+      if(arr[i][0] == 'O') {
+        winner = arr[i][0];
+        owin++;
       }
     }
     if(arr[0][i] == arr[1][i] && arr[1][i] == arr[2][i]) {
-      if(arr[0][i] != '.') {
+      if(arr[0][i] == 'X') {
         winner = arr[0][i];
-        count++;
+        xwin++;
+      }
+      if(arr[0][i] == 'O') {
+        winner = arr[0][i];
+        owin++;
       }
     }
   }
   if(arr[0][0] == arr[1][1] && arr[1][1] == arr[2][2]) {
-    if(arr[1][1] != '.') {
+    if(arr[1][1] == 'X') {
       winner = arr[1][1];
-      count++;
+      xwin++;
+    }
+    if(arr[1][1] == 'O') {
+      winner = arr[1][1];
+      owin++;
     }
   }
   if(arr[0][2] == arr[1][1] && arr[1][1] == arr[2][0]) {
-    if(arr[1][1] != '.') {
+    if(arr[1][1] == 'X') {
       winner = arr[1][1];
-      count++;
+      xwin++;
+    }
+    if(arr[1][1] == 'O') {
+      winner = arr[1][1];
+      owin++;
     }
   }
-  if(count<=1) {
-    return winner;
-  } else {
+  if(xwin > 0 && owin > 0) {
     return '-';
+  } else {
+    return winner;
   }
 }
 
