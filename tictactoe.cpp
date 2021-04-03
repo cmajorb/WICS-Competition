@@ -24,7 +24,7 @@ bool isLegal(vector<vector<char>> arr) {
   if(abs(o-x)>1) {
     return false;
   }
-  if(x > 5 && o > 4) {
+  if(x > 5 || o > 4) {
     return false;
   }
   return true;
