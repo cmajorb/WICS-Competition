@@ -8,62 +8,67 @@ using namespace std;
 int main() {
     int n = 0;
     cin >> n;
-    
-    int x = 0;
-    int y = 0;
-    int d = 0;
-    int score = 0;
+
+    double x = 0;
+    double y = 0;
+    double d = 0;
+    int totalScore = 0;
     for(int i = 0; i < n; i++)
     {
+        int score;
         cin >> x;
         cin >> y;
-        d = (int)sqrt(x*x + y*y);
-        
+        d = sqrt(x*x + y*y);
         if(d <= 10)
         {
-            score += 10;
+            score = 10;
         }
-        else if(10 < d && d <= 30)
+        else if(d <= 30)
         {
-            score += 9;
+            score = 9;
         }
-        else if(30 < d && d <= 50)
+        else if(d <= 50)
         {
-            score += 8;
+            score = 8;
         }
-        else if(50 < d && d <= 70)
+        else if(d <= 70)
         {
-            score += 7;
+            score = 7;
         }
-        else if(70 < d && d <= 90)
+        else if(d <= 90)
         {
-            score += 6;
+            score = 6;
         }
-        else if(90 < d && d <= 110)
+        else if(d <= 110)
         {
-            score += 5;
+            score = 5;
         }
-        else if(110 < d && d <= 130)
+        else if(d <= 130)
         {
-            score += 4;
+            score = 4;
         }
-        else if(130 < d && d <= 150)
+        else if(d <= 150)
         {
-            score += 3;
+            score = 3;
         }
-        else if(150 < d && d <= 170)
+        else if(d <= 170)
         {
-            score += 2;
+            score = 2;
         }
-        else if(170 < d && d <= 190)
+        else if(d <= 190)
         {
-            score += 1;
+            score = 1;
+        } else {
+          score = 0;
         }
+        cout << d << "--" << score << endl;
+
+        totalScore += score;
         //cout << "\n";
         //cout << score;
-        
+
     }
-    cout << score;
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
-    return score;
+    cout << totalScore;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    return 0;
 }
