@@ -1,0 +1,38 @@
+Bob has forgot his glasses during an important math class. As he writes the things on the blackboard to his notebook, he makes mistakes. For example, he writes the summation of 117 + 468  as:
+
+SEE SCREENSHOT
+
+Alice wants to help him correct his mistakes, but she does not have time. She needs your help to write a program to remove minimum number of columns from the addition, such that the remaining summation becomes correct:
+
+SEE SCREENSHOT
+
+Input Format
+
+The input consists of three lines. The first line is , the second line is number , and the third line is the summation . Note that all 3 numbers have the same length.
+
+Constraints
+
+the maximum length of numbers is 1000.
+
+Output Format
+
+Print a single integer showing the minimum number of columns needed to be erased.
+
+Sample Input 0
+
+3
+123
+456
+579
+Sample Output 0
+
+0
+Sample Input 1
+
+5
+12127
+45618
+51825
+Sample Output 1
+
+2
