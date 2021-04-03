@@ -1,0 +1,41 @@
+Alice plays Homescapes a lot (who doesn’t?). Alice wants to build two new fountains. There are  available fountains, for each fountain its beauty and cost are known. There are two types of money in the game: coins and diamonds, so each fountain cost can be either in coins or diamonds. No money changes between the types are allowed. Help Alice to find two fountains with maximum total beauty count so that she can buy both at the same time.
+
+Input Format
+
+The first line contains three integers ,  and  - the number of fountains, the number of coins and diamonds Alice has. The next  lines describe fountains. Each of these lines contain two integers  and  - the beauty count and the cost of the i-th fountain, and then a letter "C" or "D", describing in which type of money is the cost of fountain i: in coins or in diamonds, respectively.
+
+Constraints
+
+
+
+
+Output Format
+
+Print the maximum total beauty count of exactly two fountains Alice can build. If she cannot build two fountains, print .
+
+Sample Input 0
+
+3 7 6
+10 8 C
+4 3 C
+5 6 D
+Sample Output 0
+
+9
+Sample Input 1
+
+2 4 5
+2 5 C
+2 1 D
+Sample Output 1
+
+0
+Sample Input 2
+
+3 10 10
+5 5 C
+5 5 C
+10 11 D
+Sample Output 2
+
+10
