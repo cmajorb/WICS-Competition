@@ -5,27 +5,78 @@
 #include <algorithm>
 using namespace std;
 
-
-int main() {
-    int n = 0;
-    int sign = 1;
-    cin >> n;
-
-    string str = "a";
-    for(int i = 0; i < n; i++)
-    {
-        sign = 1;
-        cin >> str;
-        for(int j = 0; j < str.size(); j++)
-        {
-            cout << str.substr(j,1) << "\n";
-            if(str.substr(j,1).compare("-"))
-            {
-                sign = -1;
-            }
-            //else if(str.substr(j,0).compare("-"))
+int str_idx(string *str, char chr) {
+    for (int i = 0; i < str->size(); i++) {
+        if (str->at(i) == chr) {
+            return i;
         }
     }
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return -1;
+}
+
+int main() {
+    int n;
+    int i;
+    int total = 0;
+    int hrs, mins;
+
+    cin >> n;
+
+    for (i = 0; i < n; i++) {
+        int sign;
+        char chr;
+        char* line;
+        int val;
+
+        cin >> chr;
+        while (chr != '-' and chr != '+') {
+            cin >> chr;
+        }
+
+        if ('-' == chr) {
+            sign = -1;
+        }
+        else {
+            sign = 1;
+        }
+
+        chr = cin.peek();
+
+        if (chr == '.' or chr == ':') {
+            hrs = 0;
+        }
+        else {
+            cin >> val;
+            hrs = val;
+        }
+
+        cin >> chr;
+        chr = cin.peek();
+
+        if (chr != '\n') {
+            cin >> val;
+            mins = val;
+        }
+        else {
+            mins = 0;
+        }
+
+        total += sign * (60 * hrs + mins);
+
+    }
+
+    hrs = total / 60;
+    mins = total % 60;
+
+    char chr = "0";
+
+    if (mins < 10) {
+        cout << hrs << ":" << chr << mins;
+    }
+    else {
+        cout << hrs << ":" << mins;
+    }
+
+
     return 0;
 }
