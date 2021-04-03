@@ -9,15 +9,15 @@ int main() {
     int n = 0;
     cin >> n;
     
-    double x = 0;
-    double y = 0;
-    double d = 0;
+    int x = 0;
+    int y = 0;
+    int d = 0;
     int score = 0;
     for(int i = 0; i < n; i++)
     {
         cin >> x;
         cin >> y;
-        d = sqrt(x*x + y*y);
+        d = (int)sqrt(x*x + y*y);
         
         if(d <= 10)
         {
@@ -59,8 +59,8 @@ int main() {
         {
             score += 1;
         }
-        cout << "\n";
-        cout << score;
+        //cout << "\n";
+        //cout << score;
         
     }
     cout << score;
