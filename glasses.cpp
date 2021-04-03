@@ -6,6 +6,34 @@
 #include <string>
 using namespace std;
 
+
+int rec(string n1, string n2, string o, int count, int i, int carry, int n) {
+  if(i<0) {
+    if(stoi(n1)+stoi(n2) == stoi(o)) {
+      return count;
+    } else {
+      return -1;
+    }
+  }
+  int x = (n1[i] - '0')+ (n2[i] - '0') + carry;
+  //cout << "X: " << x << "  " << x%10 << "  " << (int)out[i];
+  if(x%10 != (o[i]- '0')) {
+    n1.erase(i,1);
+    n2.erase(i,1);
+    o.erase(i,1);
+    return rec(n1,n2,o,count+1,i-1,0,n-1);
+  } else {
+    //return rec(n1,n2,o,count,i-1,x/10,n);
+    int opt1 = rec(n1,n2,o,count,i-1,x/10,n);
+    if(opt1 == -1) {
+      n1.erase(i,1);
+      n2.erase(i,1);
+      o.erase(i,1);
+      opt1 = rec(n1,n2,o,count+1,i-1,0,n-1);
+    }
+    return opt1;
+  }
+}
 int main() {
 
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
@@ -15,32 +43,8 @@ int main() {
     cin >> num1;
     cin >> num2;
     cin >> out;
-    bool isValid = false;
-    int count = 0;
 
-    while(!isValid) {
-      int carry = 0;
-      int i = n-1;
-      while(i >= 0) {
-        int x = (num1[i] - '0')+ (num2[i] - '0') + carry;
-        //cout << "X: " << x << "  " << x%10 << "  " << (int)out[i];
-        if(x%10 != (out[i]- '0')) {
-          count++;
-          num1.erase(i,1);
-          num2.erase(i,1);
-          out.erase(i,1);
-          n--;
-          i = n-1;
-          carry = 0;
-        } else {
-          carry = x/10;
-          i--;
-        }
-      }
-      if(stoi(num1)+stoi(num2) == stoi(out)) {
-        isValid = true;
-      }
-    }
+      int count = rec(num1,num2,out,0,n-1,0,n);
 
     cout << count;
     return 0;
