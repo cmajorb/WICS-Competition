@@ -59,6 +59,9 @@ int main() {
         {
             score += 1;
         }
+        cout << "\n";
+        cout << score;
+        
     }
     cout << score;
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
