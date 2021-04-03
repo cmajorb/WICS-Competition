@@ -68,11 +68,15 @@ int main() {
     hrs = total / 60;
     mins = total % 60;
 
-    char chr;
-    if (mins < 10) chr = '0';
-    else chr = '\0';
+    char chr = "0";
 
-    cout << hrs << ":" << chr << mins;
+    if (mins < 10) {
+        cout << hrs << ":" << chr << mins;
+    }
+    else {
+        cout << hrs << ":" << mins;
+    }
+
 
     return 0;
 }
