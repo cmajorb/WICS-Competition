@@ -11,9 +11,9 @@ enum Type {
 };
 
 int main() {
-    const int MAXVAL = 1000000;
+    const int MAXVAL = 100000;
 
-    int n, c, d, i;
+    int n, c, d, i, ii;
     char temp;
     int cost[MAXVAL];
     int beauty[MAXVAL];
@@ -24,12 +24,10 @@ int main() {
     cin >> d;
 
     for (i = 0; i < n; i++) {
-        cin >> cost[i];
         cin >> beauty[i];
+        cin >> cost[i];
         cin >> temp;
-
-        cout << temp << endl;
-
+        
         if (temp == 'C')  {
             kind[i] = 0;
         }
@@ -38,10 +36,29 @@ int main() {
         }
     }
 
-    /*
+    int maxBeauty = 0;
+    int tdc, tcc, tb;
+
     for (i = 0; i < n; i++) {
-        for (ii = 0; i 
-        */
+        for (ii = 0; ii < n; ii++) {
+            if (i != ii) {
+                tdc = 0; tcc = 0;
+
+                if (kind[i] == 0) { tcc += cost[i]; }
+                else  { tdc += cost[i]; }
+
+                if (kind[ii] == 0) { tcc += cost[ii]; }
+                else { tdc += cost[ii]; }
+
+                if (tdc <= d and tcc <= c) {
+                    tb = beauty[i] + beauty[ii];
+                    maxBeauty = max(maxBeauty, tb);
+                }
+            }
+        }
+    }
+
+    cout << maxBeauty;
 
     return 0;
 }
