@@ -1,0 +1,35 @@
+Alice and Bob are playing tic-tac-toe game. The rules are very simple: Two players take turns marking the cells in a  grid (one player always draws crosses, the other draws O). The player who succeeds first in placing three of his marks in a horizontal, vertical or diagonal line wins, and the game is finished. The player who draws crosses goes first. If the grid is filled, but neither Xs, nor Os form the required line, a draw is announced.
+
+Alice and Bob want to write a program to determine what is the verdict of a given  grid:
+
+illegal: if the given board can’t appear during a valid game
+the first player won: if the first player has just won
+the second player won: if the second player has just won
+draw: if none has won
+first: if the first player should go next (in case of not illegal, won, or draw)
+second: if the first player should go next (in case of not illegal, won, or draw)
+Input Format
+
+The input consists of three lines, each of the lines contains characters “.”, “X” or “O”. “X” and “O” are player 1 and 2 respectively. “.” shows an empty space where one of the players can use.
+
+Constraints
+
+None
+
+Output Format
+
+Print one of the 6 verdicts:
+
+illegal, the first player won, the second player won, draw, first, second
+
+Sample Input 0
+
+XOX
+.O.
+.X.
+Sample Output 0
+
+second
+Explanation 0
+
+In the above game, it is the second player’s turn.
