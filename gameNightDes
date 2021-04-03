@@ -1,0 +1,26 @@
+Bob is having a game night in his house. He wants to have different games for people to play. One of the games that he wants to set up, is a dart game. Unfortunately, his dart game is broken, and he doesn’t have a good board, that’s why he wants to use a touchscreen and a program to calculate the scores automatically! He is asking for your help to write a program which gets the coordinate of dart shots as input and calculates the final score.
+
+The score for each dart shot at point  is calculated based on its distance from the center of the dart which is . If we consider the distance is  millimeters, the score is calculated based on the following table:
+
+SEE SCREENSHOT
+
+Input Format
+
+The first line contains a single integer  as the number of dart shots. Each of the next  lines contain two space-separated integers as the coordinates  of a dart shot. The corrdinates are in millimeters and ther absolute values will not be greater that .
+
+Constraints
+
+SEE SCREENSHOT
+
+Output Format
+
+Print a single line containing the total score of the player.
+
+Sample Input 0
+
+2
+4 7
+-31 -5
+Sample Output 0
+
+18
